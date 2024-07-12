@@ -5,10 +5,12 @@
       "name": "energy_consumption",
       "title": "Energy consumption private dwellings; type of dwelling and regions",
       "description": "This table shows regional figures on the average consumption of energy (natural gas and electricity) of private dwellings broken down by type of dwelling and ownership for Nederland, group of provinces, provinces and municipalities. Besides, for total dwellings only, the share of heat distribution (district heating) has been added, because this is relevant for the interpretation of the height of the average consumption of natural gas.",
-      "sources": [{
-        "title": "Statistics Netherlands (CBS)",
-        "path": "https://opendata.cbs.nl/statline/#/CBS/en/dataset/81528ENG"
-      }],
+      "sources": [
+        {
+          "title": "Statistics Netherlands (CBS)",
+          "path": "https://opendata.cbs.nl/statline/#/CBS/en/dataset/81528ENG"
+        }
+      ],
       "format": "csv",
       "mediatype": "text/csv",
       "path": "energy_consumption.csv",
@@ -19,22 +21,88 @@
             "name": "housing_type",
             "title": "Type of Dwelling",
             "type": "integer",
-            "categories": {
-              "resource": "housing_type-codelist",
-              "valueField": "code",
-              "labelField": "label"
-            }
+            "categories": [
+              {
+                "value": 1,
+                "label": "Total dwellings"
+              },
+              {
+                "value": 2,
+                "label": "Apartment"
+              },
+              {
+                "value": 3,
+                "label": "Terraced house"
+              },
+              {
+                "value": 4,
+                "label": "Corner house"
+              },
+              {
+                "value": 5,
+                "label": "Semi-detached house"
+              },
+              {
+                "value": 6,
+                "label": "Detached house"
+              }
+            ]
           },
           {
             "name": "region",
             "title": "Province",
             "description": "Province: administrative classification of the Dutch territory. The Netherlands has had 12 provinces since the creation of the province Flevoland on 1 January 1986.",
             "type": "string",
-            "categories": {
-              "resource": "region-codelist",
-              "valueField": "code",
-              "labelField": "label"
-            }
+            "categories": [
+              {
+                "value": "PV20",
+                "label": "Groningen"
+              },
+              {
+                "value": "PV21",
+                "label": "Fryslân"
+              },
+              {
+                "value": "PV22",
+                "label": "Drenthe"
+              },
+              {
+                "value": "PV23",
+                "label": "Overijssel"
+              },
+              {
+                "value": "PV24",
+                "label": "Flevoland"
+              },
+              {
+                "value": "PV25",
+                "label": "Gelderland"
+              },
+              {
+                "value": "PV26",
+                "label": "Utrecht"
+              },
+              {
+                "value": "PV27",
+                "label": "Noord-Holland"
+              },
+              {
+                "value": "PV28",
+                "label": "Zuid-Holland"
+              },
+              {
+                "value": "PV29",
+                "label": "Zeeland"
+              },
+              {
+                "value": "PV30",
+                "label": "Noord-Brabant"
+              },
+              {
+                "value": "PV31",
+                "label": "Limburg"
+              }
+            ]
           },
           {
             "name": "period",
@@ -56,7 +124,7 @@
           {
             "name": "av_net_supply_elec",
             "title": "Average net supply of electricity",
-            "description" : "The average annual net supply of electricity of individual connections for private dwellings calculated of the connection records of energy companies. Excluded are collective supply of e.g. lift systems or hall / gallery lightning. Excluded is electricity generated eventually in private dwellings, e.g. by solar panels.",
+            "description": "The average annual net supply of electricity of individual connections for private dwellings calculated of the connection records of energy companies. Excluded are collective supply of e.g. lift systems or hall / gallery lightning. Excluded is electricity generated eventually in private dwellings, e.g. by solar panels.",
             "type": "integer"
           },
           {
@@ -64,44 +132,6 @@
             "title": "District heating",
             "description": "The share of dwellings connected to heat distribution (district heating).\n\nHeat distribution is a heating system, by which the houses in a neighbourhood are heated by an underground network of hot water pipes. In many cases, heat distribution use residual heat from power plants. The consumption of natural gas of these houses is often very low or even nil. The amount of heat annual consumed by connected houses to heat distribution is not available. The share is indicated at 10 or more (occupied) dwellings.",
             "type": "number"
-          }
-        ]
-      }
-    },
-    {
-      "name": "housing_type-codelist",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "path": "housing_type-codelist.csv",
-      "encoding": "utf-8",
-      "schema": {
-        "fields": [
-          {
-            "name": "code",
-            "type": "integer"
-          },
-          {
-            "name": "label",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    {
-      "name": "region-codelist",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "path": "region-codelist.csv",
-      "encoding": "utf-8",
-      "schema": {
-        "fields": [
-          {
-            "name": "code",
-            "type": "string"
-          },
-          {
-            "name": "label",
-            "type": "string"
           }
         ]
       }
